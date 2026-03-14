@@ -1,0 +1,17 @@
+name: Docker Build CI
+
+on:
+ push: 
+    branches: [ main ]
+
+jobs:
+  biuld:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Build Docker image
+      run: docker build -t devops-monitoring-app:latest .
